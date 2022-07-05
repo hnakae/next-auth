@@ -11,8 +11,17 @@ datasource db {
     // url      = env("DATABASE_URL")
 }
 
-model Example {
+// schema.prisma
+model Product {
     id String @id @default(cuid())
+
+    image       String?
+    title       String
+    description String
+    price       Float
+
+    createdAt DateTime @default(now())
+    updatedAt DateTime @updatedAt
 }
 
 // Necessary for Next auth
